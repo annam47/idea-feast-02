@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Waseela Umeed - Login</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF2rQcrewfPlWJAE0YSOksVVLKRvNEXuXZOQ&s') no-repeat center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+}
+
+.login-box { 
+    position: relative;
+    background: rgba(255, 255, 255, 0.333);
+    backdrop-filter: blur(120%);
+    padding: 30px;
+    border-radius: 20px;
+    width: 340px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    text-align: center;
+    z-index: 2;
+}
+
+h2 {
+    margin-bottom: 5px;
+    color: #1b8f4c;
+}
+
+p {
+    margin-top: 0;
+    font-size: 14px;
+    color: #555;
+}
+
+input {
+    width: 92%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+input:focus {
+    border-color: #27ae60;
+}
+
+/* OPTIONS BOX */
+.options {
+    text-align: left;
+    margin-top: 15px;
+}
+
+.options strong {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Hide default radio */
+.options input[type="radio"] {
+    display: none;
+}
+
+/* Card style */
+.options label {
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    background: #fff;
+    gap: 10px;
+    position: relative;
+}
+
+/* Custom circle */
+.options label::before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    border: 2px solid #27ae60;
+    border-radius: 50%;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+/* Hover effect */
+.options label:hover {
+    border-color: #27ae60;
+    transform: scale(1.02);
+}
+
+/* Selected state */
+.options input[type="radio"]:checked + span {
+    color: #27ae60;
+    font-weight: 600;
+}
+
+/* Fill effect */
+.options input[type="radio"]:checked + span::before {
+    background: #27ae60;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.login-btn {
+    background: #27ae60;
+    color: white;
+}
+
+.signup-btn {
+    background: #3498db;
+    color: white;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+</style>
+</head>
+
+<body>
+
+<div class="overlay"></div>
+
+<div class="login-box">
+    <h2>🌿 Waseela Umeed</h2>
+    <p>Give hope through your donation</p>
+
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+
+    <div class="options">
+        <strong>Select Donation Method:</strong>
+
+        <label>
+            <input type="radio" name="donation" value="EasyPaisa">
+            <span>EasyPaisa</span>
+        </label>
+
+        <label>
+            <input type="radio" name="donation" value="Bank">
+            <span>Bank Account</span>
+        </label>
+
+        <label>
+            <input type="radio" name="donation" value="Other">
+            <span>Other</span>
+        </label>
+    </div>
+
+    <button class="btn login-btn" onclick="login()">Login</button>
+    <button class="btn signup-btn" onclick="signup()">Sign Up</button>
+</div>
+
+<script>
+function login() {
+    let user = document.getElementById('username').value.trim();
+    let pass = document.getElementById('password').value.trim();
+    let method = document.querySelector('input[name="donation"]:checked');
+
+    if (!user || !pass) {
+        alert("Please enter username and password");
+        return;
+    }
+
+    if (!method) {
+        alert("Please select a donation method");
+        return;
+    }
+
+    localStorage.setItem("user", user);
+    localStorage.setItem("method", method.value);
+
+    alert("Welcome " + user + "! Redirecting...");
+
+    window.location.href = "home.html";
+}
+
+function signup() {
+    alert("Sign Up feature coming soon 🚧");
+}
+</script>
+
+</body>
+</html>

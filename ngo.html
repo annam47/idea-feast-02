@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NGO Selection - Waseela Umeed</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#f5f7f6;
+}
+
+.header{
+  background:#1b8f4c;
+  color:white;
+  text-align:center;
+  padding:20px;
+}
+
+.container{
+  max-width:1000px;
+  margin:auto;
+  padding:20px;
+}
+
+/* CARD */
+.card{
+  background:white;
+  border-radius:12px;
+  padding:18px;
+  margin-bottom:18px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+}
+
+/* LEFT */
+.info{
+  flex:2;
+}
+
+.info h3{
+  margin:0;
+  font-size:15px;
+  color:#1b8f4c;
+}
+
+.info p{
+  margin:4px 0 0;
+  font-size:13px;
+  color:#666;
+}
+
+/* RIGHT */
+.actions{
+  flex:1;
+  display:flex;
+  justify-content:flex-end;
+  gap:10px;
+}
+
+button{
+  padding:10px 14px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.trust{
+  background:#ffb300;
+  color:black;
+}
+
+.donate{
+  background:#1b8f4c;
+  color:white;
+}
+
+/* ANIMATION */
+.glow{
+  animation:glow 1s infinite alternate;
+}
+
+@keyframes glow{
+  from{box-shadow:0 0 5px #ffb300;}
+  to{box-shadow:0 0 18px #ffb300;}
+}
+
+.pulse{
+  animation:pulse 0.6s 3;
+}
+
+@keyframes pulse{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.08);}
+  100%{transform:scale(1);}
+}
+
+/* MOBILE */
+@media(max-width:700px){
+  .card{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .actions{
+    width:100%;
+    justify-content:space-between;
+  }
+
+  button{
+    flex:1;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <h1>🇵🇰 Select NGO to Donate</h1>
+</div>
+
+<div class="container">
+
+<!-- NGO LIST START -->
+
+<div class="card"><div class="info"><h3>Prevention of Blindness</h3><p>Health support organization</p></div><div class="actions"><button class="trust" onclick="trust(this)">Trust</button><button class="donate" onclick="donate('Prevention of Blindness')">Donate</button></div></div>
+
+<div class="card"><div class="info"><h3>Al fatah foundation</h3><p>enviromental development</p></div><div class="actions"><button class="trust" onclick="trust(this)">Trust</button><button class="donate" onclick="donate('The Indus Entrepreneurs')">Donate</button></div></div>
+
+<div class="card"><div class="info"><h3>Aziz Jehan Begum Trust</h3><p>Social welfare services</p></div><div class="actions"><button class="trust" onclick="trust(this)">Trust</button><button class="donate" onclick="donate('Aziz Jehan Begum Trust')">Donate</button></div></div>
+
+<div class="card"><div class="info"><h3>IDSP</h3><p>Development studies & education</p></div><div class="actions"><button class="trust" onclick="trust(this)">Trust</button><button class="donate" onclick="donate('IDSP')">Donate</button></div></div>
+
+<div class="card"><div class="info"><h3>Global Care Foundation</h3><p>Humanitarian aid services</p></div><div class="actions"><button class="trust" onclick="trust(this)">Trust</button><button class="donate" onclick="donate('Global Care Foundation')">Donate</button></div></div>
+
+<div class="card"><div class="info"><h3>Al-Mohsinat Trust</h3><p>Welfare organization</p></div><div class="actions"><button class="trust" onclick="trust(this)">Trust</button><button class="donate" onclick="donate('Al-Mohsinat Trust')">Donate</button></div></div>
+
+<div class="card"><div class="info"><h3>CLAPP Trust</h3><p>Community development</p></div><div class="actions"><button class="trust" onclick="trust(this)">Trust</button><button class="donate" onclick="donate('CLAPP Trust')">Donate</button></div></div>
+
+<div class="card"><div class="info"><h3>Social Youth Council of Patriot</h3><p>Youth empowerment</p></div><div class="actions"><button class="trust" onclick="trust(this)">Trust</button><button class="donate" onclick="donate('SYCP')">Donate</button></div></div>
+
+<div class="card"><div class="info"><h3>College of Youth Activism & Development</h3><p>Education & activism</p></div><div class="actions"><button class="trust" onclick="trust(this)">Trust</button><button class="donate" onclick="donate('CYAD')">Donate</button></div></div>
+
+<div class="card"><div class="info"><h3>Hayyat Foundation</h3><p>Social welfare services</p></div><div class="actions"><button class="trust" onclick="trust(this)">Trust</button><button class="donate" onclick="donate('Hayyat Foundation')">Donate</button></div></div>
+
+<!-- (ALL REMAINING NGOs CONTINUE SAME FORMAT) -->
+
+<div class="card"><div class="info"><h3>Smile Foundation</h3><p>Social welfare</p></div><div class="actions"><button class="trust" onclick="trust(this)">Trust</button><button class="donate" onclick="donate('Smile Foundation')">Donate</button></div></div>
+
+<div class="card"><div class="info"><h3>Human Development Organization</h3><p>Community support</p></div><div class="actions"><button class="trust" onclick="trust(this)">Trust</button><button class="donate" onclick="donate('HDO')">Donate</button></div></div>
+
+<div class="card"><div class="info"><h3>SAHE</h3><p>Education development</p></div><div class="actions"><button class="trust" onclick="trust(this)">Trust</button><button class="donate" onclick="donate('SAHE')">Donate</button></div></div>
+
+<div class="card"><div class="info"><h3>SHER</h3><p>Rural development</p></div><div class="actions"><button class="trust" onclick="trust(this)">Trust</button><button class="donate" onclick="donate('SHER')">Donate</button></div></div>
+
+<div class="card"><div class="info"><h3>Masajid & Madaris Foundation</h3><p>Religious education support</p></div><div class="actions"><button class="trust" onclick="trust(this)">Trust</button><button class="donate" onclick="donate('MMF')">Donate</button></div></div>
+
+<div class="card"><div class="info"><h3>EHSAR</h3><p>Health & rehabilitation</p></div><div class="actions"><button class="trust" onclick="trust(this)">Trust</button><button class="donate" onclick="donate('EHSAR')">Donate</button></div></div>
+
+<div class="card"><div class="info"><h3>The Little Art</h3><p>Arts & education for children</p></div><div class="actions"><button class="trust" onclick="trust(this)">Trust</button><button class="donate" onclick="donate('The Little Art')">Donate</button></div></div>
+
+<div class="card"><div class="info"><h3>Society for Education Welfare</h3><p>Education support</p></div><div class="actions"><button class="trust" onclick="trust(this)">Trust</button><button class="donate" onclick="donate('SEW')">Donate</button></div></div>
+
+<div class="card"><div class="info"><h3>Help the Needy</h3><p>Charity services</p></div><div class="actions"><button class="trust" onclick="trust(this)">Trust</button><button class="donate" onclick="donate('Help the Needy')">Donate</button></div></div>
+
+<div class="card"><div class="info"><h3>Friends Welfare Trust</h3><p>Welfare services</p></div><div class="actions"><button class="trust" onclick="trust(this)">Trust</button><button class="donate" onclick="donate('FWT')">Donate</button></div></div>
+
+<!-- (Remaining NGOs same pattern continues...) -->
+
+</div>
+
+<script>
+
+function trust(btn){
+  btn.classList.add("glow");
+  setTimeout(()=>btn.classList.remove("glow"),1500);
+}
+
+// 🔥 UPDATED: Redirect to Donate.html
+function donate(ngo){
+  alert("Opening donation page for: " + ngo);
+  window.location.href = "Donate.html";
+}
+
+</script>
+
+</body>
+</html>
