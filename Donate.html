@@ -6,6 +6,7 @@
 <title>Donate - Waseela Umeed</title>
 
 <style>
+
 body{
   margin:0;
   font-family:Arial;
@@ -13,113 +14,166 @@ body{
 }
 
 /* HEADER */
+
 .header{
   background:#1b8f4c;
   color:white;
-  padding:20px;
+  padding:22px;
   text-align:center;
+  box-shadow:0 3px 10px rgba(0,0,0,0.2);
+}
+
+.header h1{
+  margin:0;
 }
 
 /* HERO */
+
 .hero{
-  background:url('https://media.istockphoto.com/id/1916612882/photo/portrait-group-and-kids-with-smile-at-school-for-education-learning-and-knowledge-with-hug.jpg?s=612x612&w=0&k=20&c=lqlAbXLT1LX6EUU8f0H5Ip2HSuOKpqoCITrcGHFpwa0=') center/cover;
-  height:250px;
+  background:url('https://media.istockphoto.com/id/1916612882/photo/portrait-group-and-kids-with-smile-at-school-for-education-learning-and-knowledge-with-hug.jpg?s=612x612&w=0&k=20&c=lqlAbXLT1LX6EUU8f0H5Ip2HSuOKpqoCITrcGHFpwa0=')
+  center/cover;
+
+  height:260px;
+
   display:flex;
   justify-content:center;
   align-items:center;
+
   color:white;
-  font-size:32px;
+  font-size:34px;
   font-weight:bold;
+  text-shadow:2px 2px 8px rgba(0,0,0,0.5);
 }
 
 /* CONTAINER */
+
 .container{
-  max-width:900px;
+  max-width:950px;
   margin:auto;
-  padding:40px;
+  padding:45px 20px;
   text-align:center;
 }
 
+.container h2{
+  color:#1b8f4c;
+  margin-bottom:30px;
+}
+
 /* AMOUNT BUTTONS */
+
 .amounts{
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
-  gap:15px;
-  margin-top:30px;
+  gap:18px;
 }
 
 .amounts button{
-  width:110px;
-  height:110px;
+  width:120px;
+  height:120px;
   border-radius:50%;
   border:none;
   background:#1b8f4c;
   color:white;
+  font-size:17px;
   font-weight:bold;
   cursor:pointer;
-  transition:0.3s ease;
+  transition:0.3s;
+  box-shadow:0 4px 10px rgba(0,0,0,0.15);
 }
 
 .amounts button:hover{
-  transform:scale(1.1);
-  background:#15733f;
+  transform:scale(1.08);
+  background:#146c39;
 }
 
-/* MODALS */
+/* MODAL */
+
 .modal{
   position:fixed;
   top:0;
   left:0;
   width:100%;
   height:100%;
-  background:rgba(0,0,0,0.6);
+  background:rgba(0,0,0,0.65);
   display:none;
   justify-content:center;
   align-items:center;
+  z-index:1000;
 }
+
+/* MODAL BOX */
 
 .modal-content{
   background:white;
-  padding:20px;
-  border-radius:12px;
-  width:320px;
+  width:360px;
+  padding:25px;
+  border-radius:14px;
   text-align:center;
   position:relative;
-  animation:pop 0.3s ease;
+  animation:popup 0.3s ease;
 }
 
-@keyframes pop{
-  from{transform:scale(0.7);}
-  to{transform:scale(1);}
+@keyframes popup{
+  from{
+    transform:scale(0.7);
+    opacity:0;
+  }
+
+  to{
+    transform:scale(1);
+    opacity:1;
+  }
 }
 
 /* CLOSE */
+
 .close{
   position:absolute;
-  top:8px;
-  right:12px;
-  font-size:20px;
+  top:10px;
+  right:15px;
+  font-size:24px;
   cursor:pointer;
+  color:#666;
 }
 
 /* INPUTS */
+
 input, select{
-  width:90%;
-  padding:10px;
-  margin:8px 0;
-  border-radius:6px;
+  width:92%;
+  padding:12px;
+  margin:10px 0;
+  border-radius:8px;
   border:1px solid #ccc;
+  outline:none;
+  font-size:14px;
+}
+
+input:focus,
+select:focus{
+  border-color:#1b8f4c;
+}
+
+/* NOTE */
+
+.note{
+  text-align:left;
+  font-size:12px;
+  color:#777;
+  margin-top:-5px;
+  margin-bottom:10px;
 }
 
 /* BUTTONS */
+
 .btn{
-  padding:10px 15px;
+  padding:11px 18px;
   border:none;
-  margin:8px;
-  border-radius:6px;
+  border-radius:8px;
   cursor:pointer;
+  margin:8px;
   font-weight:bold;
+  transition:0.3s;
 }
 
 .green{
@@ -127,121 +181,325 @@ input, select{
   color:white;
 }
 
-.gray{
-  background:#ccc;
+.green:hover{
+  background:#146c39;
 }
 
-/* THANK YOU */
-.thankyou{
-  display:none;
+.gray{
+  background:#d9d9d9;
 }
+
+.gray:hover{
+  background:#bdbdbd;
+}
+
+/* MESSAGE BOX */
+
+.message-box{
+  background:#f2fff6;
+  border:1px solid #1b8f4c;
+  border-radius:10px;
+  padding:15px;
+  margin-top:15px;
+  text-align:left;
+}
+
+.message-box h3{
+  color:#1b8f4c;
+  margin-bottom:10px;
+}
+
+.message-box p{
+  font-size:14px;
+  color:#444;
+  line-height:1.6;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:600px){
+
+  .hero{
+    font-size:26px;
+    text-align:center;
+    padding:0 20px;
+  }
+
+  .amounts button{
+    width:100px;
+    height:100px;
+    font-size:15px;
+  }
+
+}
+
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
+
 <div class="header">
-  <h1>Donate to Waseela Umeed (PKR)</h1>
+
+  <h1>🌿 Donate to Waseela Umeed</h1>
+
 </div>
 
+<!-- HERO -->
+
 <div class="hero">
+
   Make a Difference Today
+
 </div>
+
+<!-- CONTAINER -->
 
 <div class="container">
 
-  <h2>Select Donation Amount</h2>
+  <h2>Select Donation Amount (PKR)</h2>
 
   <div class="amounts">
-    <button onclick="openInfo(5000)">PKR 5,000</button>
-    <button onclick="openInfo(10000)">PKR 10,000</button>
-    <button onclick="openInfo(25000)">PKR 25,000</button>
-    <button onclick="openInfo(50000)">PKR 50,000</button>
-    <button onclick="openInfo(100000)">PKR 100,000</button>
+
+    <button onclick="openInfo(250)">250</button>
+
+    <button onclick="openInfo(500)">500</button>
+
+    <button onclick="openInfo(1000)">1000</button>
+
+    <button onclick="openInfo(2000)">2000</button>
+
+    <button onclick="openInfo(4000)">4000</button>
+
+    <button onclick="openInfo(5000)">5000</button>
+
+    <button onclick="openInfo(10000)">10000</button>
+
+    <button onclick="openInfo(25000)">25000</button>
+
   </div>
 
 </div>
 
-<!-- STEP 1: INFO MODAL -->
+<!-- INFO MODAL -->
+
 <div class="modal" id="infoModal">
+
   <div class="modal-content">
+
     <span class="close" onclick="closeAll()">×</span>
 
-    <h3>Donor Information</h3>
+    <h2>Donor Information</h2>
 
-    <input type="text" id="phone" placeholder="Contact Number">
-    <input type="text" id="account" placeholder="Account Number">
+    <input 
+      type="text"
+      id="phone"
+      maxlength="9"
+      placeholder="Enter 9 Digit Contact Number"
+    >
+
+    <div class="note">
+      Contact number must contain exactly 9 digits.
+    </div>
+
+    <input 
+      type="text"
+      id="account"
+      placeholder="Enter Account Number"
+    >
 
     <select id="method">
+
       <option value="">Select Payment Method</option>
+
       <option value="EasyPaisa">EasyPaisa</option>
-      <option value="Bank">Bank Account</option>
+
+      <option value="Bank Account">Bank Account</option>
+
     </select>
 
-    <button class="btn green" onclick="goConfirm()">Continue</button>
-    <button class="btn gray" onclick="closeAll()">Cancel</button>
+    <button class="btn green" onclick="goConfirm()">
+      Continue
+    </button>
+
+    <button class="btn gray" onclick="closeAll()">
+      Cancel
+    </button>
+
   </div>
+
 </div>
 
-<!-- STEP 2: CONFIRM -->
+<!-- CONFIRM MODAL -->
+
 <div class="modal" id="confirmModal">
+
   <div class="modal-content">
+
     <span class="close" onclick="closeAll()">×</span>
 
-    <h3>Are you sure?</h3>
+    <h2>Confirm Donation</h2>
+
     <p id="amountText"></p>
 
-    <button class="btn gray" onclick="closeAll()">Not Sure</button>
-    <button class="btn green" onclick="donate()">Donate</button>
+    <button class="btn gray" onclick="closeAll()">
+      Not Sure
+    </button>
+
+    <button class="btn green" onclick="donate()">
+      Donate
+    </button>
+
   </div>
+
 </div>
 
-<!-- THANK YOU -->
-<div class="modal thankyou" id="thankyou">
+<!-- THANK YOU MODAL -->
+
+<div class="modal" id="thankyou">
+
   <div class="modal-content">
+
     <span class="close" onclick="closeAll()">×</span>
 
-    <h2>Thank You ❤️</h2>
-    <p>Thank you for choosing our organization.<br>Your support matters.</p>
+    <h2>❤️ Donation Successful</h2>
+
+    <p>
+      Thank you for supporting Waseela Umeed.
+    </p>
+
+    <!-- DONOR MESSAGE -->
+
+    <div class="message-box">
+
+      <h3>📩 Message To Donor</h3>
+
+      <p id="donorMessage"></p>
+
+    </div>
+
+    <!-- NGO MESSAGE -->
+
+    <div class="message-box">
+
+      <h3>🏢 Message To NGO</h3>
+
+      <p id="ngoMessage"></p>
+
+    </div>
+
   </div>
+
 </div>
 
 <script>
 
 let selectedAmount = 0;
 
+/* OPEN MODAL */
+
 function openInfo(amount){
+
   selectedAmount = amount;
+
   document.getElementById("infoModal").style.display = "flex";
 }
 
+/* CONTINUE */
+
 function goConfirm(){
 
-  let phone = document.getElementById("phone").value;
-  let account = document.getElementById("account").value;
+  let phone = document.getElementById("phone").value.trim();
+
+  let account = document.getElementById("account").value.trim();
+
   let method = document.getElementById("method").value;
 
+  /* VALIDATION */
+
   if(phone === "" || account === "" || method === ""){
+
     alert("Please fill all fields");
+
     return;
   }
 
+  /* PHONE VALIDATION */
+
+  let phonePattern = /^[0-9]{9}$/;
+
+  if(!phonePattern.test(phone)){
+
+    alert("Contact number must contain exactly 9 digits");
+
+    return;
+  }
+
+  /* ACCOUNT CHECK */
+
+  if(account.length < 6){
+
+    alert("Please enter a valid account number");
+
+    return;
+  }
+
+  /* NEXT */
+
   document.getElementById("infoModal").style.display = "none";
-  document.getElementById("amountText").innerText =
-    "You selected PKR " + selectedAmount + 
-    "\nMethod: " + method;
+
+  document.getElementById("amountText").innerHTML =
+  "You selected donation amount of <b>PKR " +
+  selectedAmount +
+  "</b><br><br>Payment Method: <b>" +
+  method +
+  "</b>";
 
   document.getElementById("confirmModal").style.display = "flex";
 }
 
+/* DONATE */
+
 function donate(){
+
+  let ngoName = localStorage.getItem("ngoName") || "Selected NGO";
+
+  /* HIDE CONFIRM */
+
   document.getElementById("confirmModal").style.display = "none";
+
+  /* DONOR MESSAGE */
+
+  document.getElementById("donorMessage").innerHTML =
+
+  "Your donation of <b>PKR " + selectedAmount +
+  "</b> has been successfully detected and transferred securely to <b>" +
+  ngoName +
+  "</b>. Thank you for your kindness and support.";
+
+  /* NGO MESSAGE */
+
+  document.getElementById("ngoMessage").innerHTML =
+
+  "<b>" + ngoName +
+  "</b> has received a notification of a new donation worth <b>PKR " +
+  selectedAmount +
+  "</b>. The organization appreciates your contribution and support.";
+
+  /* SHOW THANK YOU */
+
   document.getElementById("thankyou").style.display = "flex";
 }
 
+/* CLOSE */
+
 function closeAll(){
+
   document.getElementById("infoModal").style.display = "none";
+
   document.getElementById("confirmModal").style.display = "none";
+
   document.getElementById("thankyou").style.display = "none";
 }
 

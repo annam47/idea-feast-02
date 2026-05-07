@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NGO Trust Overview</title>
+
+<style>
+
+body{
+  margin:0;
+  font-family:Arial;
+  background:#f4f7f5;
+}
+
+.header{
+  background:#1b8f4c;
+  color:white;
+  text-align:center;
+  padding:30px;
+}
+
+.container{
+  max-width:850px;
+  margin:40px auto;
+  background:white;
+  padding:30px;
+  border-radius:14px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+
+h2{
+  color:#1b8f4c;
+}
+
+.box{
+  margin-top:20px;
+  padding:20px;
+  background:#f8f8f8;
+  border-radius:10px;
+}
+
+.box h3{
+  color:#1b8f4c;
+  margin-bottom:10px;
+}
+
+.box p{
+  color:#555;
+  line-height:1.7;
+}
+
+button{
+  margin-top:25px;
+  padding:12px 18px;
+  border:none;
+  background:#1b8f4c;
+  color:white;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:15px;
+}
+
+button:hover{
+  background:#146c39;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+
+  <h1>NGO Organization Overview</h1>
+
+</div>
+
+<div class="container">
+
+  <h2 id="ngoTitle"></h2>
+
+  <div class="box">
+
+    <h3>Organization Overview</h3>
+
+    <p id="overview"></p>
+
+  </div>
+
+  <div class="box">
+
+    <h3>Origin</h3>
+
+    <p id="origin"></p>
+
+  </div>
+
+  <div class="box">
+
+    <h3>People Helped</h3>
+
+    <p id="helped"></p>
+
+  </div>
+
+  <button onclick="window.history.back()">
+    ← Back
+  </button>
+
+</div>
+
+<script>
+
+document.getElementById("ngoTitle").innerHTML =
+localStorage.getItem("ngoName");
+
+document.getElementById("overview").innerHTML =
+localStorage.getItem("ngoOverview");
+
+document.getElementById("origin").innerHTML =
+localStorage.getItem("ngoOrigin");
+
+document.getElementById("helped").innerHTML =
+localStorage.getItem("ngoHelped");
+
+</script>
+
+</body>
+</html>
